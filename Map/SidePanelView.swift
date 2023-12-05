@@ -68,6 +68,11 @@ struct SidePanelView: View {
            
                 Button {
                     self.viewModel.isRouteMode.toggle()
+                    if self.viewModel.isRouteMode == false {
+                        self.viewModel.fromPoint = nil
+                        self.viewModel.toPoint = nil
+                        self.viewModel.road = nil
+                    }
                     self.viewModel.isAddPointMode = false
                 } label: {
                     Image(systemName: "mappin.circle.fill")
